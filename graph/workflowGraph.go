@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"fmt"
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi/models"
+	"jira-cli/jiraApi/models"
 	"os"
 	"strings"
 )

@@ -18,8 +18,8 @@ package version
 import (
 	"fmt"
 	"github.com/olekukonko/tablewriter"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 	"os"
 )
 

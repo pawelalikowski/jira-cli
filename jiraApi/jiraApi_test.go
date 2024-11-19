@@ -17,11 +17,11 @@ package jiraApi
 import (
 	"errors"
 	"github.com/jonboulle/clockwork"
-	"github.com/sotomskir/jira-cli/jiraApi/models"
 	"gopkg.in/jarcoal/httpmock.v1"
 	"gopkg.in/resty.v1"
 	"gotest.tools/assert"
 	"io/ioutil"
+	"jira-cli/jiraApi/models"
 	"testing"
 )
 

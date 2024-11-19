@@ -22,13 +22,13 @@ package worklog
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"jira-cli/jiraApi"
 	"sync"
 )
 
-//Cmd workload add command
+// Cmd workload add command
 var worklogDeleteCmd = &cobra.Command{
 	Use:     "remove ISSUE_KEY",
 	Aliases: []string{"r"},
@@ -52,7 +52,7 @@ var worklogDeleteCmd = &cobra.Command{
 				} else {
 					logrus.Infof("%s Success: %d | Failed: %d", issueKey, sumOk, sumError)
 				}
-			} (user, issueKey)
+			}(user, issueKey)
 		}
 		wg.Wait()
 	},

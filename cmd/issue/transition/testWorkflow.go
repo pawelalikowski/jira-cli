@@ -17,7 +17,7 @@ package transition
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
+	"jira-cli/jiraApi"
 	"os"
 
 	"github.com/spf13/cobra"

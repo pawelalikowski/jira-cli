@@ -16,10 +16,10 @@
 package issue
 
 import (
-	"github.com/sotomskir/jira-cli/cmd/issue/transition"
-	"github.com/sotomskir/jira-cli/cmd/issue/version"
-	"github.com/sotomskir/jira-cli/cmd/issue/worklog"
 	"github.com/spf13/cobra"
+	"jira-cli/cmd/issue/transition"
+	"jira-cli/cmd/issue/version"
+	"jira-cli/cmd/issue/worklog"
 )
 
 // Cmd represents the issue command

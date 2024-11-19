@@ -17,7 +17,7 @@ package project
 
 import (
 	"github.com/olekukonko/tablewriter"
-	"github.com/sotomskir/jira-cli/jiraApi"
+	"jira-cli/jiraApi"
 	"os"
 
 	"github.com/spf13/cobra"

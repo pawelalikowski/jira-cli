@@ -17,12 +17,12 @@ package cmd
 import (
 	"github.com/mitchellh/go-homedir"
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/cmd/issue"
-	"github.com/sotomskir/jira-cli/cmd/project"
-	"github.com/sotomskir/jira-cli/cmd/version"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"jira-cli/cmd/issue"
+	"jira-cli/cmd/project"
+	"jira-cli/cmd/version"
+	"jira-cli/jiraApi"
 	"os"
 	"path"
 )

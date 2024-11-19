@@ -20,10 +20,11 @@ import (
 	"fmt"
 	"github.com/antchfx/htmlquery"
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/graph"
-	"github.com/sotomskir/jira-cli/jiraApi/models"
 	"github.com/spf13/viper"
+	"golang.org/x/exp/slices"
 	"gopkg.in/resty.v1"
+	"jira-cli/graph"
+	"jira-cli/jiraApi/models"
 	"strings"
 	"sync"
 	"time"
@@ -294,7 +295,7 @@ func AddWorklog(key string, min uint64, com string, date string, time string) (m
 	}
 }
 
-//ListWorklog for specified JIRa issue
+// ListWorklog for specified JIRa issue
 func ListWorklog(key string) (worklogs models.WorklogList, error error) {
 	logrus.Infof("Attempting to list worklogs for issue %s.", key)
 	response := models.WorklogList{}
@@ -302,14 +303,14 @@ func ListWorklog(key string) (worklogs models.WorklogList, error error) {
 	return response, err
 }
 
-//Delete specified worklog (id) from JIRA issue (key)
+// Delete specified worklog (id) from JIRA issue (key)
 func DeleteWorklog(key string, id string) (status int, error error) {
 	endpoint := fmt.Sprintf("rest/api/2/issue/%s/worklog/%s", key, id)
 	res, err := execute(resty.MethodDelete, endpoint, nil, nil, "", nil)
 	return res, err
 }
 
-//DeleteWorklogForUser get worklogs form given issue, filter for given user and delete all worklogs
+// DeleteWorklogForUser get worklogs form given issue, filter for given user and delete all worklogs
 func DeleteWorklogForUser(user string, key string) (sumOk int, sumError int, error error) {
 	resp, err := ListWorklog(key)
 	sumOk = 0
@@ -346,12 +347,14 @@ func TransitionIssue(workflowPath string, issueKey string, targetStatus string, 
 	}
 	transitionMap := BuildWorkflow(w, issue.Fields.Status.Name, targetStatus)
 
+	excludeStatuses := strings.Split(strings.ToLower(excludeStatus), ",")
+
 	for i := 0; i < 20; i++ {
 		issue, err := GetIssue(issueKey)
 		if err != nil {
 			return 1, err
 		}
-		if i == 0 && strings.ToLower(issue.Fields.Status.Name) == strings.ToLower(excludeStatus) {
+		if i == 0 && slices.Contains(excludeStatuses, strings.ToLower(issue.Fields.Status.Name)) {
 			logrus.Infof("skipped issue with excluded status: '%s'\n", issueKey)
 			return 0, nil
 		}

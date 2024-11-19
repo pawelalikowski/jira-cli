@@ -15,7 +15,7 @@
 package main
 
 import (
-	"github.com/sotomskir/jira-cli/cmd"
+	"jira-cli/cmd"
 )
 
 func main() {

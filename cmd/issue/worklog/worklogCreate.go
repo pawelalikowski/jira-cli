@@ -21,13 +21,13 @@
 package worklog
 
 import (
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 	"strconv"
 	"sync"
 )
 
-//Cmd workload add command
+// Cmd workload add command
 var worklogCreateCmd = &cobra.Command{
 	Use:     "add TIME_IN_MINUTES ISSUE_KEY [ISSUE_KEY...]",
 	Aliases: []string{"a"},

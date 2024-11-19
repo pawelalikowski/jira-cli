@@ -23,13 +23,13 @@ package worklog
 import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 	"os"
 	"strconv"
 )
 
-//Cmd workload add command
+// Cmd workload add command
 var worklogListCmd = &cobra.Command{
 	Use:     "list ISSUE_KEY",
 	Aliases: []string{"ls"},

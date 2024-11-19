@@ -17,8 +17,8 @@ package version
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 )
 
 // versionCreateCmd represents the versionCreate command

@@ -18,8 +18,8 @@ package issue
 import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 	"os"
 )
 

@@ -17,18 +17,18 @@ package version
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/sotomskir/jira-cli/jiraApi"
 	"github.com/spf13/cobra"
+	"jira-cli/jiraApi"
 	"strings"
 	"sync"
 )
 
 var (
-	summary string
+	summary     string
 	description string
-	issueType string
-	create bool
-	deployment bool
+	issueType   string
+	create      bool
+	deployment  bool
 )
 
 // VersionCmd represents the issueVersion command
